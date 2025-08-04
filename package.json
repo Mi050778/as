@@ -1,0 +1,46 @@
+{
+  "name": "sorte-online",
+  "version": "1.0.0",
+  "description": "Site de loteria moderno e responsivo - réplica do sorteonline.com.br",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "serve": "python -m http.server 8000",
+    "build": "echo 'Site estático - não requer build'",
+    "deploy": "echo 'Deploy manual necessário'"
+  },
+  "keywords": [
+    "lottery",
+    "loteria",
+    "mega-sena",
+    "lotofacil",
+    "quina",
+    "lotomania",
+    "html5",
+    "css3",
+    "javascript",
+    "responsive",
+    "modern"
+  ],
+  "author": "Desenvolvedor",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/sorte-online.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seu-usuario/sorte-online/issues"
+  },
+  "homepage": "https://github.com/seu-usuario/sorte-online#readme",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
