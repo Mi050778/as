@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorte Online - Sua Loteria Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-dice"></i>
+                    <span>Sorte Online</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#lotteries" class="nav-link">Loterias</a></li>
+                    <li><a href="#results" class="nav-link">Resultados</a></li>
+                    <li><a href="#about" class="nav-link">Sobre</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Sua Sorte Está Aqui!</h1>
+                <p class="hero-subtitle">Jogue nas principais loterias do Brasil com segurança e facilidade</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('lotteries')">
+                        <i class="fas fa-ticket-alt"></i>
+                        Jogar Agora
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('results')">
+                        <i class="fas fa-trophy"></i>
+                        Ver Resultados
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="lottery-balls">
+                    <div class="ball ball-1">01</div>
+                    <div class="ball ball-2">15</div>
+                    <div class="ball ball-3">23</div>
+                    <div class="ball ball-4">42</div>
+                    <div class="ball ball-5">58</div>
+                    <div class="ball ball-6">60</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lotteries Section -->
+    <section id="lotteries" class="lotteries">
+        <div class="container">
+            <h2 class="section-title">Principais Loterias</h2>
+            <div class="lotteries-grid">
+                <div class="lottery-card" onclick="selectLottery('mega-sena')">
+                    <div class="lottery-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Mega-Sena</h3>
+                    <p>Escolha 6 números de 01 a 60</p>
+                    <div class="lottery-prize">
+                        <span class="prize-label">Prêmio Estimado:</span>
+                        <span class="prize-value">R$ 2.000.000,00</span>
+                    </div>
+                    <button class="btn btn-play">Jogar</button>
+                </div>
+
+                <div class="lottery-card" onclick="selectLottery('lotofacil')">
+                    <div class="lottery-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Lotofácil</h3>
+                    <p>Escolha 15 números de 01 a 25</p>
+                    <div class="lottery-prize">
+                        <span class="prize-label">Prêmio Estimado:</span>
+                        <span class="prize-value">R$ 500.000,00</span>
+                    </div>
+                    <button class="btn btn-play">Jogar</button>
+                </div>
+
+                <div class="lottery-card" onclick="selectLottery('quina')">
+                    <div class="lottery-icon">
+                        <i class="fas fa-diamond"></i>
+                    </div>
+                    <h3>Quina</h3>
+                    <p>Escolha 5 números de 01 a 80</p>
+                    <div class="lottery-prize">
+                        <span class="prize-label">Prêmio Estimado:</span>
+                        <span class="prize-value">R$ 1.500.000,00</span>
+                    </div>
+                    <button class="btn btn-play">Jogar</button>
+                </div>
+
+                <div class="lottery-card" onclick="selectLottery('lotomania')">
+                    <div class="lottery-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Lotomania</h3>
+                    <p>Escolha 20 números de 00 a 99</p>
+                    <div class="lottery-prize">
+                        <span class="prize-label">Prêmio Estimado:</span>
+                        <span class="prize-value">R$ 800.000,00</span>
+                    </div>
+                    <button class="btn btn-play">Jogar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section id="game" class="game-section">
+        <div class="container">
+            <div class="game-container">
+                <div class="game-header">
+                    <h2 id="game-title">Selecione uma Loteria</h2>
+                    <p id="game-description">Escolha uma loteria acima para começar a jogar</p>
+                </div>
+                
+                <div class="game-area">
+                    <div class="number-grid" id="number-grid">
+                        <!-- Numbers will be generated by JavaScript -->
+                    </div>
+                    
+                    <div class="game-controls">
+                        <div class="selected-numbers">
+                            <h4>Números Selecionados:</h4>
+                            <div class="selected-list" id="selected-list"></div>
+                        </div>
+                        
+                        <div class="control-buttons">
+                            <button class="btn btn-secondary" onclick="clearSelection()">
+                                <i class="fas fa-eraser"></i>
+                                Limpar
+                            </button>
+                            <button class="btn btn-primary" onclick="generateRandom()">
+                                <i class="fas fa-random"></i>
+                                Surpresinha
+                            </button>
+                            <button class="btn btn-success" onclick="playGame()" id="play-btn" disabled>
+                                <i class="fas fa-play"></i>
+                                Jogar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="results">
+        <div class="container">
+            <h2 class="section-title">Últimos Resultados</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>Mega-Sena</h3>
+                    <div class="result-numbers">
+                        <span class="result-number">07</span>
+                        <span class="result-number">12</span>
+                        <span class="result-number">23</span>
+                        <span class="result-number">35</span>
+                        <span class="result-number">41</span>
+                        <span class="result-number">58</span>
+                    </div>
+                    <p class="result-date">Concurso 2654 - 15/01/2024</p>
+                </div>
+
+                <div class="result-card">
+                    <h3>Lotofácil</h3>
+                    <div class="result-numbers">
+                        <span class="result-number">02</span>
+                        <span class="result-number">04</span>
+                        <span class="result-number">07</span>
+                        <span class="result-number">09</span>
+                        <span class="result-number">10</span>
+                        <span class="result-number">11</span>
+                        <span class="result-number">13</span>
+                        <span class="result-number">15</span>
+                        <span class="result-number">16</span>
+                        <span class="result-number">18</span>
+                        <span class="result-number">19</span>
+                        <span class="result-number">20</span>
+                        <span class="result-number">21</span>
+                        <span class="result-number">23</span>
+                        <span class="result-number">25</span>
+                    </div>
+                    <p class="result-date">Concurso 2987 - 15/01/2024</p>
+                </div>
+
+                <div class="result-card">
+                    <h3>Quina</h3>
+                    <div class="result-numbers">
+                        <span class="result-number">12</span>
+                        <span class="result-number">25</span>
+                        <span class="result-number">38</span>
+                        <span class="result-number">45</span>
+                        <span class="result-number">67</span>
+                    </div>
+                    <p class="result-date">Concurso 6543 - 15/01/2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Sobre o Sorte Online</h2>
+                    <p>Somos uma plataforma segura e confiável para apostas em loterias. Nossa missão é proporcionar a melhor experiência possível para nossos usuários, com transparência e responsabilidade.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Segurança</h4>
+                            <p>Suas apostas são protegidas com a mais alta tecnologia de segurança</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <h4>Disponibilidade 24h</h4>
+                            <p>Aposte a qualquer momento, todos os dias da semana</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Multiplataforma</h4>
+                            <p>Acesse de qualquer dispositivo, computador ou celular</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">1M+</span>
+                            <span class="stat-label">Apostas Realizadas</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Usuários Ativos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Seguro</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contato@sorteonline.com.br</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(11) 99999-9999</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>São Paulo, SP - Brasil</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Seu nome" required>
+                    <input type="email" placeholder="Seu email" required>
+                    <input type="text" placeholder="Assunto" required>
+                    <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-dice"></i>
+                        <span>Sorte Online</span>
+                    </div>
+                    <p>Jogue com responsabilidade. Apostas podem causar dependência.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#lotteries">Loterias</a></li>
+                        <li><a href="#results">Resultados</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#contact">Contato</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sorte Online. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Aposta Realizada!</h2>
+            <div id="modal-body">
+                <p>Sua aposta foi registrada com sucesso!</p>
+                <div class="modal-numbers" id="modal-numbers"></div>
+                <p>Boa sorte!</p>
+            </div>
+            <button class="btn btn-primary" onclick="closeModal()">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
