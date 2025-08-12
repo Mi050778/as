@@ -55,6 +55,14 @@
       "type": "static",
       "status": 200,
       "ts": "2025-08-12T05:38:59.554Z"
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "targetHost": "local",
+      "type": "static",
+      "status": 200,
+      "ts": "2025-08-12T05:48:38.362Z"
     }
   ]
 }

@@ -7,6 +7,7 @@ import compression from 'compression';
 import cors from 'cors';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import fetch from 'node-fetch';
+import crypto from 'crypto';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -254,6 +255,123 @@ app.post('/admin/log-request', (req, res) => {
     // ignore
   }
   return res.json({ ok: true });
+});
+
+// In-memory stores
+const sessions = new Map();
+const cartsByUser = new Map();
+
+function getSession(req) {
+  const auth = req.headers.authorization || '';
+  const token = (auth.startsWith('Bearer ') ? auth.slice(7) : null) || req.query.token;
+  if (token && sessions.has(token)) return { token, user: sessions.get(token) };
+  return null;
+}
+
+function getNextData() {
+  try {
+    const sourcePath = path.join(PUBLIC_DIR, 'site', 'sorteonline.com.br', 'index.html');
+    const html = fs.readFileSync(sourcePath, 'utf8');
+    const m = html.match(/<script id="__NEXT_DATA__" type="application\/json">([\s\S]*?)<\/script>/);
+    if (!m) return null;
+    return JSON.parse(m[1]);
+  } catch (e) {
+    return null;
+  }
+}
+
+function normalizeFsjList(nextData) {
+  try { return nextData?.props?.pageProps?.fsjList || []; } catch { return []; }
+}
+function normalizeContests(nextData) {
+  try { return nextData?.props?.pageProps?.contests || { data: [], status: 200 }; } catch { return { data: [], status: 200 }; }
+}
+
+// Local API emulator
+app.all(/^\/api-local\/([^/]+)\/(.*)/, (req, res) => {
+  const host = req.params[0];
+  const subPath = `/${req.params[1] || ''}`;
+  const method = req.method.toUpperCase();
+  const nextData = getNextData();
+
+  // Auth
+  if (/auth|login|signin|entrar/i.test(subPath) && method === 'POST') {
+    const { email } = req.body || {};
+    const user = { id: 'u_local_1', email: email || 'user@example.com', name: 'Usuário Local' };
+    const token = crypto.randomBytes(12).toString('hex');
+    sessions.set(token, user);
+    recordRoute(method, req.originalUrl, 'local-api', 200, 'mock');
+    return res.json({ status: 'ok', user, token });
+  }
+  if (/logout|signout/i.test(subPath) && method === 'POST') {
+    const sess = getSession(req);
+    if (sess) sessions.delete(sess.token);
+    recordRoute(method, req.originalUrl, 'local-api', 200, 'mock');
+    return res.json({ status: 'ok' });
+  }
+  if (/(^|\/)user(\/|$)|(^|\/)me(\/|$)/i.test(subPath) && method === 'GET') {
+    const sess = getSession(req);
+    if (!sess) {
+      recordRoute(method, req.originalUrl, 'local-api', 401, 'mock');
+      return res.status(401).json({ error: 'unauthorized' });
+    }
+    recordRoute(method, req.originalUrl, 'local-api', 200, 'mock');
+    return res.json(sess.user);
+  }
+
+  // Catalog and products
+  if (/catalog|catalogo|sku|product|item|fsj/i.test(subPath) && method === 'GET') {
+    const fsj = normalizeFsjList(nextData);
+    recordRoute(method, req.originalUrl, 'local-api', 200, 'mock');
+    return res.json({ items: fsj, total: fsj.length });
+  }
+
+  // Contests / results / lotteries
+  if (/contest|concurso|contests|result|loter/i.test(subPath) && method === 'GET') {
+    const contests = normalizeContests(nextData);
+    recordRoute(method, req.originalUrl, 'local-api', 200, 'mock');
+    return res.json(contests);
+  }
+
+  // Cart
+  if (/cart|carrinho/i.test(subPath)) {
+    const sess = getSession(req) || { user: { id: 'guest' } };
+    const key = sess.user.id;
+    if (!cartsByUser.has(key)) cartsByUser.set(key, { items: [], total: 0 });
+    const cart = cartsByUser.get(key);
+
+    if (method === 'GET') {
+      recordRoute(method, req.originalUrl, 'local-api', 200, 'mock');
+      return res.json(cart);
+    }
+    if (method === 'POST') {
+      const { skuId, quantity = 1, price = 0 } = req.body || {};
+      const existing = cart.items.find(i => i.skuId === skuId);
+      if (existing) existing.quantity += quantity; else cart.items.push({ skuId, quantity, price });
+      cart.total = cart.items.reduce((s, it) => s + it.price * it.quantity, 0);
+      recordRoute(method, req.originalUrl, 'local-api', 200, 'mock');
+      return res.json(cart);
+    }
+    if (method === 'PUT' || method === 'PATCH') {
+      const { skuId, quantity } = req.body || {};
+      const existing = cart.items.find(i => i.skuId === skuId);
+      if (existing) existing.quantity = quantity;
+      cart.total = cart.items.reduce((s, it) => s + it.price * it.quantity, 0);
+      recordRoute(method, req.originalUrl, 'local-api', 200, 'mock');
+      return res.json(cart);
+    }
+    if (method === 'DELETE') {
+      const { skuId } = req.body || {};
+      cart.items = cart.items.filter(i => i.skuId !== skuId);
+      cart.total = cart.items.reduce((s, it) => s + it.price * it.quantity, 0);
+      recordRoute(method, req.originalUrl, 'local-api', 200, 'mock');
+      return res.json(cart);
+    }
+  }
+
+  // Fallback
+  recordRoute(method, req.originalUrl, 'local-api', 404, 'mock');
+  return res.status(404).json({ error: 'Rota não mapeada localmente', host, path: subPath });
 });
 
 // Serve the home page with link rewriting to local mirror paths
