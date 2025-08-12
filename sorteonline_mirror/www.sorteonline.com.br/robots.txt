@@ -1,0 +1,19 @@
+User-Agent: *
+Disallow: /usuario/
+Disallow: /carrinho/
+Disallow: /portal/
+Disallow: /index.html/
+Disallow: /pagamento/
+Disallow: /mail/
+Disallow: /minha-conta*
+Disallow: /?*
+Disallow: /uat-newsite*
+Disallow: /uat*
+Disallow: /staging*
+Disallow: /vtex-prod*
+Disallow: /graf*
+Disallow: /novidades*
+Disallow: /anonymous*
+Disallow: /feed/
+
+Sitemap: https://www.sorteonline.com.br/sitemap.xml
