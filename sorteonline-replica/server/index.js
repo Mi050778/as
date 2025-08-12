@@ -98,9 +98,54 @@ app.get(/^\/mirror\/([^/]+)\/(.*)/, async (req, res) => {
   }
 });
 
+// Full forward endpoint: method/headers/body passthrough (no cache)
+app.all(/^\/forward\/([^/]+)\/(.*)/, async (req, res) => {
+  const host = req.params[0];
+  const subPath = req.params[1] || '';
+  const protocol = req.query.proto === 'http' ? 'http' : 'https';
+  const targetUrl = `${protocol}://${host}/${subPath}`.replace(/\/$/, '');
+
+  try {
+    const headers = { ...req.headers };
+    delete headers.host;
+    delete headers.connection;
+    delete headers['content-length'];
+
+    const upstream = await fetch(targetUrl, {
+      method: req.method,
+      headers,
+      body: ['GET', 'HEAD'].includes(req.method) ? undefined : JSON.stringify(req.body ?? {}),
+    });
+
+    res.status(upstream.status);
+    upstream.headers.forEach((value, key) => {
+      if (!['transfer-encoding', 'content-encoding'].includes(key)) {
+        res.setHeader(key, value);
+      }
+    });
+
+    const buffer = Buffer.from(await upstream.arrayBuffer());
+    recordRoute(req.method, req.originalUrl, host, upstream.status, 'proxy');
+    return res.end(buffer);
+  } catch (err) {
+    recordRoute(req.method, req.originalUrl, host, 500, 'proxy');
+    return res.status(500).send('Forward error');
+  }
+});
+
 // Serve static files under /public
 app.use('/static', express.static(PUBLIC_DIR, { maxAge: '7d', index: false }));
 app.use('/docs', express.static(DOCS_DIR, { maxAge: 0 }));
+
+// Serve service worker file
+app.get('/sw.js', (req, res) => {
+  const swPath = path.join(PUBLIC_DIR, 'sw.js');
+  if (fs.existsSync(swPath)) {
+    res.setHeader('content-type', 'application/javascript');
+    return res.sendFile(swPath);
+  }
+  return res.status(404).send('sw.js not found');
+});
 
 // Proxy helpers
 function makeProxy(target) {
@@ -231,7 +276,7 @@ app.get('/', async (req, res) => {
     }
 
     // Inject client-side network instrumentation
-    const instrument = `\n<script>(function(){\n  try {\n    const origFetch = window.fetch;\n    window.fetch = async function(input, init){\n      const url = (typeof input === 'string') ? input : (input && input.url) || '' ;\n      const method = (init && init.method) || 'GET';\n      const headers = (init && init.headers) || {};\n      const bodySample = (init && typeof init.body === 'string') ? init.body.slice(0, 1024) : null;\n      try {\n        const resp = await origFetch.apply(this, arguments);\n        const cloned = resp.clone();\n        let responseBodySample = null;\n        try { responseBodySample = await cloned.clone().text(); responseBodySample = responseBodySample.slice(0, 1024); } catch (e) {}\n        const responseHeaders = {};\n        cloned.headers && cloned.headers.forEach && cloned.headers.forEach((v,k)=>{ responseHeaders[k]=v; });\n        navigator.sendBeacon('/admin/log-request', new Blob([JSON.stringify({ url, method, headers, bodySample, status: resp.status, responseHeaders, responseBodySample })], { type: 'application/json' }));\n        return resp;\n      } catch (e) {\n        try { navigator.sendBeacon('/admin/log-request', new Blob([JSON.stringify({ url, method, headers, bodySample, status: null })], { type: 'application/json' })); } catch(_){}\n        throw e;\n      }\n    };\n    const OrigXHR = window.XMLHttpRequest;\n    function WrappedXHR(){ const xhr = new OrigXHR(); let _method='GET', _url=''; let _body=null;\n      const origOpen = xhr.open;\n      xhr.open = function(method, url){ _method=method; _url=url; return origOpen.apply(xhr, arguments); };\n      const origSend = xhr.send;\n      xhr.send = function(body){ _body = (typeof body==='string') ? body.slice(0,1024) : null;\n        xhr.addEventListener('loadend', function(){ try { navigator.sendBeacon('/admin/log-request', new Blob([JSON.stringify({ url:_url, method:_method, headers:{}, bodySample:_body, status:xhr.status })], { type: 'application/json' })); } catch(_){} });\n        return origSend.apply(xhr, arguments);\n      };\n      return xhr;\n    }\n    window.XMLHttpRequest = WrappedXHR;\n  } catch(e) {}\n})();</script>\n`;
+    const instrument = `\n<script>(function(){\n  try {\n    // Register Service Worker to route cross-origin requests through this server\n    if ('serviceWorker' in navigator) {\n      navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function(){});\n    }\n    const origFetch = window.fetch;\n    window.fetch = async function(input, init){\n      const url = (typeof input === 'string') ? input : (input && input.url) || '' ;\n      const method = (init && init.method) || 'GET';\n      const headers = (init && init.headers) || {};\n      const bodySample = (init && typeof init.body === 'string') ? init.body.slice(0, 1024) : null;\n      try {\n        const resp = await origFetch.apply(this, arguments);\n        const cloned = resp.clone();\n        let responseBodySample = null;\n        try { responseBodySample = await cloned.clone().text(); responseBodySample = responseBodySample.slice(0, 1024); } catch (e) {}\n        const responseHeaders = {};\n        cloned.headers && cloned.headers.forEach && cloned.headers.forEach((v,k)=>{ responseHeaders[k]=v; });\n        navigator.sendBeacon('/admin/log-request', new Blob([JSON.stringify({ url, method, headers, bodySample, status: resp.status, responseHeaders, responseBodySample })], { type: 'application/json' }));\n        return resp;\n      } catch (e) {\n        try { navigator.sendBeacon('/admin/log-request', new Blob([JSON.stringify({ url, method, headers, bodySample, status: null })], { type: 'application/json' })); } catch(_){}\n        throw e;\n      }\n    };\n    const OrigXHR = window.XMLHttpRequest;\n    function WrappedXHR(){ const xhr = new OrigXHR(); let _method='GET', _url=''; let _body=null;\n      const origOpen = xhr.open;\n      xhr.open = function(method, url){ _method=method; _url=url; return origOpen.apply(xhr, arguments); };\n      const origSend = xhr.send;\n      xhr.send = function(body){ _body = (typeof body==='string') ? body.slice(0,1024) : null;\n        xhr.addEventListener('loadend', function(){ try { navigator.sendBeacon('/admin/log-request', new Blob([JSON.stringify({ url:_url, method:_method, headers:{}, bodySample:_body, status:xhr.status })], { type: 'application/json' })); } catch(_){} });\n        return origSend.apply(xhr, arguments);\n      };\n      return xhr;\n    }\n    window.XMLHttpRequest = WrappedXHR;\n  } catch(e) {}\n})();</script>\n`;
     if (html.includes('</head>')) {
       html = html.replace('</head>', instrument + '</head>');
     } else {
