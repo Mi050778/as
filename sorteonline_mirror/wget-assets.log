@@ -1,0 +1,444 @@
+--2025-08-07 19:28:00--  https://www.sorteonline.com.br/
+Resolving www.sorteonline.com.br (www.sorteonline.com.br)... 104.18.205.113, 104.18.206.113, 2606:4700::6812:cd71, ...
+Connecting to www.sorteonline.com.br (www.sorteonline.com.br)|104.18.205.113|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘www.sorteonline.com.br/index.html’
+
+     0K .......... .......... .......... .......... .......... 4.65M
+    50K .......... .......... .......... .......... .......... 8.47M
+   100K .......... .......... .......... .......... ..........  244K
+   150K .......... .......... .......... .......... ..........  345M
+   200K .......... .......... .......... .......... ..........  217K
+   250K .......... .......... .......... .......... ..........  892M
+   300K .......... .......... .......... .......... ..........  222K
+   350K .......... .......... .......... .......... ..........  536M
+   400K .......... .........                                    495M=0.7s
+
+Last-modified header missing -- time-stamps turned off.
+2025-08-07 19:28:01 (620 KB/s) - ‘www.sorteonline.com.br/index.html’ saved [429626]
+
+Loading robots.txt; please ignore errors.
+--2025-08-07 19:28:02--  https://www.sorteonline.com.br/robots.txt
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 387 [text/plain]
+Saving to: ‘www.sorteonline.com.br/robots.txt’
+
+     0K                                                       100%  295M=0s
+
+2025-08-07 19:28:02 (295 MB/s) - ‘www.sorteonline.com.br/robots.txt’ saved [387/387]
+
+Loading robots.txt; please ignore errors.
+--2025-08-07 19:28:03--  https://fonts.googleapis.com/robots.txt
+Resolving fonts.googleapis.com (fonts.googleapis.com)... 173.194.202.95, 2607:f8b0:400e:c0d::5f
+Connecting to fonts.googleapis.com (fonts.googleapis.com)|173.194.202.95|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘fonts.googleapis.com/robots.txt’
+
+     0K                                                        12.2M=0s
+
+2025-08-07 19:28:03 (12.2 MB/s) - ‘fonts.googleapis.com/robots.txt’ saved [25]
+
+Loading robots.txt; please ignore errors.
+--2025-08-07 19:28:04--  https://fonts.gstatic.com/robots.txt
+Resolving fonts.gstatic.com (fonts.gstatic.com)... 142.251.188.94, 2607:f8b0:400e:c1b::5e
+Connecting to fonts.gstatic.com (fonts.gstatic.com)|142.251.188.94|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2025-08-07 19:28:04 ERROR 404: Not Found.
+
+Loading robots.txt; please ignore errors.
+--2025-08-07 19:28:05--  https://meajuda.sorteonline.com.br/robots.txt
+Resolving meajuda.sorteonline.com.br (meajuda.sorteonline.com.br)... 104.18.206.113, 104.18.205.113, 2606:4700::6812:ce71, ...
+Connecting to meajuda.sorteonline.com.br (meajuda.sorteonline.com.br)|104.18.206.113|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘meajuda.sorteonline.com.br/robots.txt’
+
+     0K ..                                                     96.5M=0s
+
+2025-08-07 19:28:06 (96.5 MB/s) - ‘meajuda.sorteonline.com.br/robots.txt’ saved [2226]
+
+Loading robots.txt; please ignore errors.
+--2025-08-07 19:28:06--  https://lp.sorteonline.com.br/robots.txt
+Resolving lp.sorteonline.com.br (lp.sorteonline.com.br)... 44.229.220.222, 34.210.109.146, 34.217.231.110
+Connecting to lp.sorteonline.com.br (lp.sorteonline.com.br)|44.229.220.222|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Cookie coming from lp.sorteonline.com.br attempted to set domain to cdn.webflow.com
+Length: unspecified [text/plain]
+Saving to: ‘lp.sorteonline.com.br/robots.txt’
+
+     0K                                                        0.00 =0s
+
+2025-08-07 19:28:06 (0.00 B/s) - ‘lp.sorteonline.com.br/robots.txt’ saved [0]
+
+--2025-08-07 19:28:07--  https://www.sorteonline.com.br/manifest.json
+Connecting to www.sorteonline.com.br (www.sorteonline.com.br)|104.18.205.113|:443... connected.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/manifest.json’ not modified on server. Omitting download.
+
+--2025-08-07 19:28:08--  https://www.sorteonline.com.br/favicon/favicon_256.png
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/favicon/favicon_256.png’ not modified on server. Omitting download.
+
+--2025-08-07 19:28:09--  https://www.sorteonline.com.br/favicon/favicon_512.png
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/favicon/favicon_512.png’ not modified on server. Omitting download.
+
+--2025-08-07 19:28:11--  https://www.sorteonline.com.br/favicon/favicon_768.webp
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/favicon/favicon_768.webp’ not modified on server. Omitting download.
+
+--2025-08-07 19:28:11--  https://www.sorteonline.com.br/favicon/favicon_1024.png
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/favicon/favicon_1024.png’ not modified on server. Omitting download.
+
+--2025-08-07 19:28:12--  https://www.sorteonline.com.br/favicon/favicon_16.svg
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/favicon/favicon_16.svg’ not modified on server. Omitting download.
+
+--2025-08-07 19:28:13--  https://www.sorteonline.com.br/favicon/favicon_32.svg
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/favicon/favicon_32.svg’ not modified on server. Omitting download.
+
+--2025-08-07 19:28:14--  https://www.sorteonline.com.br/favicon/favicon_64.svg
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/favicon/favicon_64.svg’ not modified on server. Omitting download.
+
+--2025-08-07 19:28:15--  https://www.sorteonline.com.br/favicon/favicon_128.svg
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/favicon/favicon_128.svg’ not modified on server. Omitting download.
+
+--2025-08-12 05:03:56--  https://fonts.googleapis.com/
+Connecting to fonts.googleapis.com (fonts.googleapis.com)|173.194.202.95|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2025-08-12 05:03:56 ERROR 404: Not Found.
+
+--2025-08-12 05:03:57--  https://fonts.gstatic.com/
+Connecting to fonts.gstatic.com (fonts.gstatic.com)|142.251.188.94|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2025-08-12 05:03:57 ERROR 404: Not Found.
+
+--2025-08-12 05:03:58--  https://www.sorteonline.com.br/_next/static/media/2314da4445066e13-s.p.woff2
+Connecting to www.sorteonline.com.br (www.sorteonline.com.br)|104.18.205.113|:443... connected.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/media/2314da4445066e13-s.p.woff2’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:00--  https://www.sorteonline.com.br/_next/static/css/69a47ab47b7818e0.css
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/css/69a47ab47b7818e0.css’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:00--  https://www.sorteonline.com.br/_next/static/chunks/polyfills-42372ed130431b0a.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/polyfills-42372ed130431b0a.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:01--  https://www.sorteonline.com.br/_next/static/chunks/6066-48d1f5d0a25f300e.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/6066-48d1f5d0a25f300e.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:02--  https://www.sorteonline.com.br/_next/static/chunks/2375.19e20c384ed26309.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/2375.19e20c384ed26309.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:03--  https://www.sorteonline.com.br/_next/static/chunks/361-5ad82c7d81d50359.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/361-5ad82c7d81d50359.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:05--  https://www.sorteonline.com.br/_next/static/chunks/5288-804a543efde6923c.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/5288-804a543efde6923c.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:05--  https://www.sorteonline.com.br/_next/static/chunks/6795-2e0bc47dfb77574a.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/6795-2e0bc47dfb77574a.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:06--  https://www.sorteonline.com.br/_next/static/chunks/8357.a7da73278dee262e.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/8357.a7da73278dee262e.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:08--  https://www.sorteonline.com.br/_next/static/chunks/8592.bac2f8f58b0f0a8d.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/8592.bac2f8f58b0f0a8d.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:09--  https://www.sorteonline.com.br/_next/static/chunks/webpack-9c660d2e43c954a0.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/webpack-9c660d2e43c954a0.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:10--  https://www.sorteonline.com.br/_next/static/chunks/framework-2ac3d3289e946937.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/framework-2ac3d3289e946937.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:10--  https://www.sorteonline.com.br/_next/static/chunks/main-97c6d5b3c04887ae.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/main-97c6d5b3c04887ae.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:11--  https://www.sorteonline.com.br/_next/static/chunks/pages/_app-3efa9a1a13c0ba01.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/pages/_app-3efa9a1a13c0ba01.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:12--  https://www.sorteonline.com.br/_next/static/chunks/585-ffbfc258ed9a72e4.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/585-ffbfc258ed9a72e4.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:13--  https://www.sorteonline.com.br/_next/static/chunks/5208-afeb19496d3928e3.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/5208-afeb19496d3928e3.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:14--  https://www.sorteonline.com.br/_next/static/chunks/5632-2de11ce83014edfc.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/5632-2de11ce83014edfc.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:16--  https://www.sorteonline.com.br/_next/static/chunks/3236-103fa9d67b0cb468.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/3236-103fa9d67b0cb468.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:17--  https://www.sorteonline.com.br/_next/static/chunks/8518-5abe283b6db7486b.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/8518-5abe283b6db7486b.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:19--  https://www.sorteonline.com.br/_next/static/chunks/9526-a126f62509557428.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/9526-a126f62509557428.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:20--  https://www.sorteonline.com.br/_next/static/chunks/230-9407f4255cebb3ab.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/230-9407f4255cebb3ab.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:22--  https://www.sorteonline.com.br/_next/static/chunks/4638-f0c966148fad23d3.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/4638-f0c966148fad23d3.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:23--  https://www.sorteonline.com.br/_next/static/chunks/pages/index-0a430a9f38b61131.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/chunks/pages/index-0a430a9f38b61131.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:24--  https://www.sorteonline.com.br/_next/static/bsyH7M5LuA-SdQzlvjzK9/_buildManifest.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/bsyH7M5LuA-SdQzlvjzK9/_buildManifest.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:25--  https://www.sorteonline.com.br/_next/static/bsyH7M5LuA-SdQzlvjzK9/_ssgManifest.js
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/_next/static/bsyH7M5LuA-SdQzlvjzK9/_ssgManifest.js’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:26--  https://www.sorteonline.com.br/catalogo
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘www.sorteonline.com.br/catalogo.html’
+
+     0K .......... .......... .......... .......... .......... 99.8M
+    50K .......... .......... .......... ....                  1.18M=0.03s
+
+Last-modified header missing -- time-stamps turned off.
+2025-08-12 05:04:28 (2.84 MB/s) - ‘www.sorteonline.com.br/catalogo.html’ saved [86375]
+
+--2025-08-12 05:04:29--  https://www.sorteonline.com.br/resultados
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘www.sorteonline.com.br/resultados.html’
+
+     0K .......... .......... .......... .......... .......... 6.58M
+    50K .......... .......... .......... .......... ..........  229K
+   100K .......... .......... .......... .......... ..........  461M
+   150K .......... .......... .......... .......... ..........  669M
+   200K .......... .......... .......... .......... ..........  223K
+   250K .......... .......... .......... .......... ..........  557M
+   300K .......... .......... .......... .......... ..........  233K
+   350K .......... .......... .......... .......... ..........  843M
+   400K .......... .......... .......... ..                     163K=0.9s
+
+Last-modified header missing -- time-stamps turned off.
+2025-08-12 05:04:30 (500 KB/s) - ‘www.sorteonline.com.br/resultados.html’ saved [443113]
+
+--2025-08-12 05:04:31--  https://www.sorteonline.com.br/premiacoes
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘www.sorteonline.com.br/premiacoes.html’
+
+     0K .......... .......... .......... .......... .......... 1.51M
+    50K .......... .......... .......... .......... .......... 6.42M
+   100K ....                                                   8.51T=0.04s
+
+Last-modified header missing -- time-stamps turned off.
+2025-08-12 05:04:31 (2.56 MB/s) - ‘www.sorteonline.com.br/premiacoes.html’ saved [107078]
+
+--2025-08-12 05:04:32--  https://meajuda.sorteonline.com.br/hc/pt-br
+Connecting to meajuda.sorteonline.com.br (meajuda.sorteonline.com.br)|104.18.206.113|:443... connected.
+HTTP request sent, awaiting response... 403 Forbidden
+2025-08-12 05:04:32 ERROR 403: Forbidden.
+
+--2025-08-12 05:04:33--  https://lp.sorteonline.com.br/ofertas-de-parceiros
+Connecting to lp.sorteonline.com.br (lp.sorteonline.com.br)|44.229.220.222|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Cookie coming from lp.sorteonline.com.br attempted to set domain to cdn.webflow.com
+Length: unspecified [text/html]
+Saving to: ‘lp.sorteonline.com.br/ofertas-de-parceiros.html’
+
+     0K .......... .......... .......... .......... .......... 33.8M
+    50K .....                                                   578M=0.001s
+
+2025-08-12 05:04:33 (37.0 MB/s) - ‘lp.sorteonline.com.br/ofertas-de-parceiros.html’ saved [56330]
+
+Loading robots.txt; please ignore errors.
+--2025-08-12 05:04:35--  https://loja.sorteonline.com.br/robots.txt
+Resolving loja.sorteonline.com.br (loja.sorteonline.com.br)... 104.18.206.113, 104.18.205.113, 2606:4700::6812:cd71, ...
+Connecting to loja.sorteonline.com.br (loja.sorteonline.com.br)|104.18.206.113|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://www.sorteonline.com.br [following]
+--2025-08-12 05:04:36--  https://www.sorteonline.com.br/
+Connecting to www.sorteonline.com.br (www.sorteonline.com.br)|104.18.205.113|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘loja.sorteonline.com.br/robots.txt.html’
+
+     0K .......... .......... .......... .......... .......... 2.55M
+    50K .......... .......... .......... .......... .......... 8.51M
+   100K .......... .......... .......... .......... ..........  243K
+   150K .......... .......... .......... .......... ..........  386M
+   200K .......... .......... .......... .......... ..........  225K
+   250K .......... .......... .......... .......... ..........  915M
+   300K .......... .......... .......... .......... ..........  223K
+   350K .......... .......... .......... .......... ..........  557M
+   400K .......... .........                                    399M=0.7s
+
+2025-08-12 05:04:37 (619 KB/s) - ‘loja.sorteonline.com.br/robots.txt.html’ saved [429626]
+
+--2025-08-12 05:04:38--  https://www.sorteonline.com.br/images/Partners/picpay.svg
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/images/Partners/picpay.svg’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:39--  https://www.sorteonline.com.br/images/Partners/pagbank.svg
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/images/Partners/pagbank.svg’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:40--  https://www.sorteonline.com.br/images/Partners/inter.svg
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/images/Partners/inter.svg’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:41--  https://www.sorteonline.com.br/images/Partners/bancopan.svg
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/images/Partners/bancopan.svg’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:42--  https://www.sorteonline.com.br/images/Partners/premmia.svg
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/images/Partners/premmia.svg’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:43--  https://www.sorteonline.com.br/images/Partners/meliuz.svg
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 304 Not Modified
+File ‘www.sorteonline.com.br/images/Partners/meliuz.svg’ not modified on server. Omitting download.
+
+--2025-08-12 05:04:44--  https://www.sorteonline.com.br/mega-sena
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘www.sorteonline.com.br/mega-sena.html’
+
+     0K .......... .......... .......... .......... .......... 6.54M
+    50K .......... .......... .......... .......... ..........  117M
+   100K .......... .......... .......... .......... ..........  216K
+   150K .......... .......... .......... .......... ..........  639M
+   200K .......... .......... .......... .......... ..........  238K
+   250K .......... .......... .......... .......... ..........  456M
+   300K .......... .......... .......... .......... ..........  234K
+   350K .......... .......... .......... .......... ..........  751M
+   400K .......... .......... .......... .......... ..........  223K
+   450K .......... .......... .......... .......... ..........  683M
+   500K .......... .......... .......... .......... ..........  243K
+   550K .......... .......... ..........                        772M=1.1s
+
+Last-modified header missing -- time-stamps turned off.
+2025-08-12 05:04:45 (532 KB/s) - ‘www.sorteonline.com.br/mega-sena.html’ saved [594702]
+
+--2025-08-12 05:04:46--  https://www.sorteonline.com.br/dupla-sena
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘www.sorteonline.com.br/dupla-sena.html’
+
+     0K .......... .......... .......... .......... .......... 5.29M
+    50K .......... .......... .......... .......... ..........  224K
+   100K .......... .......... .......... .......... ..........  447M
+   150K .......... .......... .......... .......... ..........  469M
+   200K .......... .......... .......... .......... ..........  237K
+   250K .......... .......... .......... .......... ..........  860M
+   300K .......... .......... .......... .......... ..........  223K
+   350K .......... .......... .......... .......... ..........  720M
+   400K .......... .......... .......... .......... ..........  223K
+   450K .......... .......... .......... .......... ..........  569M
+   500K .......... .......... .......... .......... ..........  243K
+   550K .......... .......... ..........                        443M=1.1s
+
+Last-modified header missing -- time-stamps turned off.
+2025-08-12 05:04:47 (529 KB/s) - ‘www.sorteonline.com.br/dupla-sena.html’ saved [594714]
+
+--2025-08-12 05:04:48--  https://www.sorteonline.com.br/lotomania
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘www.sorteonline.com.br/lotomania.html’
+
+     0K .......... .......... .......... .......... .......... 8.58M
+    50K .......... .......... .......... .......... .......... 1.27M
+   100K .......... .......... .......... .......... ..........  195K
+   150K .......... .......... .......... .......... ..........  332M
+   200K .......... .......... .......... .......... ..........  242K
+   250K .......... .......... .......... .......... ..........  301M
+   300K .......... .......... .......... .......... ..........  228K
+   350K .......... .......... .......... .......... ..........  400M
+   400K .......... .......... .......... .......... ..........  522M
+   450K .......... .......... .......... .......... ..........  223K
+   500K .......... .......... .......... .......... ..........  515M
+   550K .......... .......... ..........                        149K=1.2s
+
+Last-modified header missing -- time-stamps turned off.
+2025-08-12 05:04:49 (502 KB/s) - ‘www.sorteonline.com.br/lotomania.html’ saved [594772]
+
+--2025-08-12 05:04:50--  https://www.sorteonline.com.br/quina
+Reusing existing connection to www.sorteonline.com.br:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘www.sorteonline.com.br/quina.html’
+
+     0K .......... .......... .......... .......... .......... 13.1M
+    50K .......... .......... .......... .......... ..........  353M
