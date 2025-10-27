@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/",
+      "targetHost": "local",
+      "type": "static",
+      "status": 200,
+      "ts": "2025-08-12T05:21:04.999Z"
+    },
+    {
+      "method": "GET",
+      "path": "/mirror/www.sorteonline.com.br/_next/static/css/69a47ab47b7818e0.css",
+      "targetHost": "www.sorteonline.com.br",
+      "type": "proxy",
+      "status": 200,
+      "ts": "2025-08-12T05:21:17.103Z"
+    },
+    {
+      "method": "GET",
+      "path": "/mirror/www.sorteonline.com.br/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "targetHost": "www.sorteonline.com.br",
+      "type": "proxy",
+      "status": 200,
+      "ts": "2025-08-12T05:22:19.534Z"
+    },
+    {
+      "method": "GET",
+      "path": "/mirror/www.sorteonline.com.br/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "targetHost": "www.sorteonline.com.br",
+      "type": "static",
+      "status": 200,
+      "ts": "2025-08-12T05:22:21.944Z"
+    },
+    {
+      "method": "GET",
+      "path": "/mirror/www.sorteonline.com.br/_next/static/chunks/6066-48d1f5d0a25f300e.js",
+      "targetHost": "www.sorteonline.com.br",
+      "type": "proxy",
+      "status": 200,
+      "ts": "2025-08-12T05:22:22.055Z"
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "targetHost": "local",
+      "type": "static",
+      "status": 200,
+      "ts": "2025-08-12T05:23:01.964Z"
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "targetHost": "local",
+      "type": "static",
+      "status": 200,
+      "ts": "2025-08-12T05:38:59.554Z"
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "targetHost": "local",
+      "type": "static",
+      "status": 200,
+      "ts": "2025-08-12T05:48:38.362Z"
+    }
+  ]
+}
